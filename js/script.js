@@ -3,7 +3,7 @@ let currentDayEl = document.querySelector('#currentDay');
 
 //Dates
 currentDayEl.innerHTML = moment().format("dddd MMM Do YYYY");
-
+ //btns selected one by one
 let btn1 = document.querySelector("#btn1");
 let btn2 = document.querySelector("#btn2");
 let btn3 = document.querySelector("#btn3");
@@ -14,7 +14,7 @@ let btn7 = document.querySelector("#btn7");
 let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
 
-// InputLogBoxes Assigned
+// InputLogBoxes Assigned one by one
 let logInputEl1 = document.querySelector("#log1");
 let logInputEl2 = document.querySelector("#log2");
 let logInputEl3 = document.querySelector("#log3");
@@ -26,7 +26,7 @@ let logInputEl8 = document.querySelector("#log8");
 let logInputEl9 = document.querySelector("#log9");
 
 
-//Local storage Assigned
+//Local storage Assigned individually
 let Data1 = localStorage.getItem("logInputEl1");
 logInputEl1.textContent = Data1;
 
@@ -55,14 +55,12 @@ let Data9 = localStorage.getItem("logInputEl9");
 logInputEl9.textContent = Data9;
 
 
-function Response (refresh) {
-    btn1.addEventListener("click", function() {     //Buttons Event Listeners
-        let logInputEl1 = document.querySelector("#log1").value;
-    
-        localStorage.setItem("logInputEl1", logInputEl1);
-    
-    
-    });
+
+     btn1.addEventListener("click", function() {     //Buttons Event Listeners
+    let logInputEl1 = document.querySelector("#log1").value;
+
+    localStorage.setItem("logInputEl1", logInputEl1);
+});
     
     btn2.addEventListener("click", function() {
         let logInputEl2 = document.querySelector("#log2").value;
@@ -111,20 +109,18 @@ function Response (refresh) {
     
         localStorage.setItem("logInputEl9", logInputEl9);
     });
-    refresh.preventDefault();
-    console.log(refresh);
-}
+
 
 
 
 function displayColors() {
     let time = moment().format("H");
     // looping through the data-times and comparing to
-     for(let x = 9; x < 18; x++) {
-        let hour = $('.form-group').find(`[data-time=${x}]`)
-            if (time === x) {
+     for(let i = 9; x < 18; i++) {
+        let hour = $('.form-group').find(`[data-time=${i}]`)
+            if (time === i) {
                 hour.addClass("present"); 
-            } else if (time < x) {
+            } else if (time < i) {
                 hour.addClass("past"); 
             } else {
                 hour.addClass("future") 
