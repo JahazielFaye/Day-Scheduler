@@ -54,9 +54,9 @@ logInputEl8.textContent = Data8;
 let Data9 = localStorage.getItem("logInputEl9");
 logInputEl9.textContent = Data9;
 
+//Buttons Event Listeners
 
-
-     btn1.addEventListener("click", function() {     //Buttons Event Listeners
+    btn1.addEventListener("click", function() {
     let logInputEl1 = document.querySelector("#log1").value;
 
     localStorage.setItem("logInputEl1", logInputEl1);
@@ -109,22 +109,25 @@ logInputEl9.textContent = Data9;
     
         localStorage.setItem("logInputEl9", logInputEl9);
     });
+    
 
 
 
-
-function displayColors() {
-    let time = moment().format("H");
-    // looping through the data-times and comparing to
-     for(let i = 9; x < 18; i++) {
-        let hour = $('.form-group').find(`[data-time=${i}]`)
-            if (time === i) {
-                hour.addClass("present"); 
-            } else if (time < i) {
-                hour.addClass("past"); 
-            } else {
-                hour.addClass("future") 
-            }
-     }
-}
-displayColors();
+    function displayColors() {
+        // set time variable to military time   
+        let time = moment().format("H");
+        // looping through the data-times and comparing to
+        // the time variable which are both military times
+         for(let x = 9; x < 18; x++) {
+            let hourEl = $('.form-group').find(`[data-time=${x}]`)
+                if (time == x) {
+                    hourEl.addClass("present"); // if current time do present class
+                } else if (time > x) {
+                    hourEl.addClass("past"); // if past time do past class
+                } else {
+                    hourEl.addClass("future") // if future time do future class
+                }
+         }
+    }
+    
+    displayColors();
