@@ -69,16 +69,7 @@ body {
   .btn:hover {
     background-color: RoyalBlue;
   }
-  
-  .user-to-do {
-    font-size: 30px;
-    /*background-color: gray;*/ 
-  }
-  
-  .user-to-do:active {
-    border: 2px solid green;
-  }
-  
+   
   .time {
     font-size: 18px;
   }
