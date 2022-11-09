@@ -38,18 +38,13 @@ body {
   }
   /*time color display*/
   .past {
-    background-color: #461eb4;
+    background-color: #7ab6d2;
     color: white;
   }
  
   .present {
     background-color: #ff6961;
     color:rgb(92, 196, 206); 
-  }
-  
-  .future {
-    background-color: #7ab6d2;
-    color: white;
   }
   
   .btn {

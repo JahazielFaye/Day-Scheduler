@@ -1,8 +1,4 @@
-//Current day tagreted
-let currentDayEl = document.querySelector('#currentDay');
 
-//Dates
-currentDayEl.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
  //btns selected one by one <------------->
 let btn1 = document.querySelector("#btn1");
 let btn2 = document.querySelector("#btn2");
@@ -109,16 +105,20 @@ logInputEl9.textContent = Data9;
     
         localStorage.setItem("logInputEl9", logInputEl9);
     });
-    
+    //Current day tagreted
+let timeOfDay = document.querySelector('#currentDay');
+
+//Dates
+timOfDay.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 
 //time display here <-------->
     function displayColor() {
           
-        let time = moment().format( 'h:mm:ss a');
+        let time = moment().format('h');
         // looping through the data-times 
-         for(let i = 9; i < time.hours; x++) {
-            let hours = $('.form-group').find(`[data-time=${x}]`)
+         for(let i = 9; i < 24; i++) {
+            let hours = $('.form-group').find(`[data-time=${i}]`)
                 if (time == i) {
                     hours.addClass("present"); // if current time do present class
                 } else if (time < i) {
