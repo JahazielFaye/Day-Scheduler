@@ -2,8 +2,8 @@
 let currentDayEl = document.querySelector('#currentDay');
 
 //Dates
-currentDayEl.innerHTML = moment().format("dddd MMM Do YYYY");
- //btns selected one by one
+currentDayEl.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+ //btns selected one by one <------------->
 let btn1 = document.querySelector("#btn1");
 let btn2 = document.querySelector("#btn2");
 let btn3 = document.querySelector("#btn3");
@@ -14,7 +14,7 @@ let btn7 = document.querySelector("#btn7");
 let btn8 = document.querySelector("#btn8");
 let btn9 = document.querySelector("#btn9");
 
-// InputLogBoxes Assigned one by one
+// InputLogBoxes <------> Assigned one by one
 let logInputEl1 = document.querySelector("#log1");
 let logInputEl2 = document.querySelector("#log2");
 let logInputEl3 = document.querySelector("#log3");
@@ -26,7 +26,7 @@ let logInputEl8 = document.querySelector("#log8");
 let logInputEl9 = document.querySelector("#log9");
 
 
-//Local storage Assigned individually
+//Local storage <--------> Assigned individually
 let Data1 = localStorage.getItem("logInputEl1");
 logInputEl1.textContent = Data1;
 
@@ -54,7 +54,7 @@ logInputEl8.textContent = Data8;
 let Data9 = localStorage.getItem("logInputEl9");
 logInputEl9.textContent = Data9;
 
-//Buttons Event Listeners
+///<-----Buttons for Event Listeners-------------->
 
     btn1.addEventListener("click", function() {
     let logInputEl1 = document.querySelector("#log1").value;
@@ -112,22 +112,21 @@ logInputEl9.textContent = Data9;
     
 
 
-
-    function displayColors() {
-        // set time variable to military time   
-        let time = moment().format("H");
-        // looping through the data-times and comparing to
-        // the time variable which are both military times
-         for(let x = 9; x < 18; x++) {
-            let hourEl = $('.form-group').find(`[data-time=${x}]`)
-                if (time == x) {
-                    hourEl.addClass("present"); // if current time do present class
-                } else if (time > x) {
-                    hourEl.addClass("past"); // if past time do past class
+//time display here <-------->
+    function displayColor() {
+          
+        let time = moment().format( 'h:mm:ss a');
+        // looping through the data-times 
+         for(let i = 9; i < time.hours; x++) {
+            let hours = $('.form-group').find(`[data-time=${x}]`)
+                if (time == i) {
+                    hours.addClass("present"); // if current time do present class
+                } else if (time < i) {
+                    hours.addClass("past"); // if past time do past class
                 } else {
-                    hourEl.addClass("future") // if future time do future class
+                    hours.addClass("future") // if future time do future class
                 }
          }
     }
     
-    displayColors();
+    displayColor();
