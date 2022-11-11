@@ -109,7 +109,7 @@ logInputEl9.textContent = Data9;
 let timeOfDay = document.querySelector('#currentDay');
 
 //Dates
-timOfDay.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+timeOfDay.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 
 //time display here <-------->
@@ -123,9 +123,7 @@ timOfDay.innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
                     hours.addClass("present"); // if current time do present class
                 } else if (time < i) {
                     hours.addClass("past"); // if past time do past class
-                } else {
-                    hours.addClass("future") // if future time do future class
-                }
+                } 
          }
     }
     
